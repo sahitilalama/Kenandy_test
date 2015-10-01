@@ -15,15 +15,15 @@ public class SearchPage {
 
 	@FindBy(xpath = Configuration.searchField)
 	public WebElement searchField;
-	
+
 	@FindBy(xpath = Configuration.searchButton)
 	public WebElement searchButton;
-	
 
 	public SearchPage enterSearchField() {
 		searchField.sendKeys("apple watch");
 		return PageFactory.initElements(driver, SearchPage.class);
 	}
+
 	public SelectCategoryPage clickSearchButton() {
 		searchButton.click();
 		return PageFactory.initElements(driver, SelectCategoryPage.class);

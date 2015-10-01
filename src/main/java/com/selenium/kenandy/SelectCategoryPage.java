@@ -15,7 +15,7 @@ public class SelectCategoryPage {
 	@FindBy(xpath = Configuration.selectCategory)
 	public WebElement selectCategory;
 
-	public SearchResultsPage getSearchResults() {
+	public SearchResultsPage selectSmartWatch() {
 		selectCategory.click();
 		return PageFactory.initElements(driver, SearchResultsPage.class);
 	}

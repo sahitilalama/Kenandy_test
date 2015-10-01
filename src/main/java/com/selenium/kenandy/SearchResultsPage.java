@@ -13,12 +13,12 @@ public class SearchResultsPage {
 	public SearchResultsPage(WebDriver driver) {
 		this.driver = driver;
 	}
+	
+	@FindBy(partialLinkText = Configuration.appleWatch)
+	public WebElement appleWatch;
 
-	@FindBy(xpath = Configuration.appleWatchSelect)
-	public WebElement appleWatchSelect;
-
-	public AppleWatchRatingsPage getSearchResults() {
-		driver.get(appleWatchSelect.toString());
+	public AppleWatchRatingsPage findAppleWatch() {
+		appleWatch.click();
 		return PageFactory.initElements(driver, AppleWatchRatingsPage.class);
 	}
 
